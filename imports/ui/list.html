@@ -1,0 +1,30 @@
+<template name="employee">
+    <table border="1" style="border-collapse: collapse">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Age</td>
+                <td>Created At</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{#if employees.count}}
+            {{#each employees}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{age}}</td>
+                <td>{{createdAt}}</td>
+                <td><button class="delete-emp">Delete</button></td>
+            </tr>
+            {{/each}}
+            {{else}}
+            <tr>
+                <td colspan="3">No Data</td>
+            </tr>
+            {{/if}}
+        </tbody>
+    </table>
+    <br>
+    <button class="create-emp">Create New</button>
+</template>
